@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/miEvent"
+        android:icon="@drawable/event_icon"
+        app:showAsAction="always"
+        android:title="@string/events" />
+    <item
+        android:id="@+id/miMembers"
+        android:icon="@drawable/members_icon"
+
+        android:title="@string/members" />
+    <item
+        android:id="@+id/miCoreTeam"
+        android:icon="@drawable/core_team"
+        android:title="@string/core_team" />
+
+    <item
+        android:id="@+id/miSettings"
+        android:icon="@drawable/settings_icon"
+        android:title="@string/settings" />
+    <item
+        android:id="@+id/miLogOut"
+        android:icon="@drawable/log_out_icon"
+        android:title="@string/log_out" />
+
+</menu>

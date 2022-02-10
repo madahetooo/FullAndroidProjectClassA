@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">classA</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="country">Country</string>
+    <string name="apply">Apply</string>
+    <string name="lets_count_together">Lets Count Together</string>
+    <string name="_1">+1</string>
+    <string name="first_number">First Number</string>
+    <string name="second_number">Second Number</string>
+    <string name="add">ADD</string>
+    <string name="test">TEST</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
+    <string name="dsc">DSC</string>
+    <string name="show_image">show image</string>
+    <string name="which_kind_of_burger_you_need_to_order">Which kind of burger you need to order?!</string>
+    <string name="beef">Beef</string>
+    <string name="chicken">Chicken</string>
+    <string name="shrimp">Shrimp</string>
+    <string name="cheese">Cheese</string>
+    <string name="onions">Onions</string>
+    <string name="salad">Salad</string>
+    <string name="order">Order</string>
+    <string name="this_is_dsc_notification">This is DSC Notification</string>
+    <string name="settings">Settings</string>
+    <string name="members">Members</string>
+    <string name="core_team">Core Team</string>
+    <string name="log_out">Log Out</string>
+    <string name="events">Events</string>
+    <string name="enter_your_todo">Enter your todo</string>
+    <string name="dummytext">DummyText</string>
+    <string-array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>Aug</item>
+        <item>Sep</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
+    </string-array>
+</resources>

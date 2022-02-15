@@ -2,35 +2,38 @@ package com.apps.fullandroidcourseclassa
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_calculator.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityCalculatorBinding
 
 class Calculator : AppCompatActivity() {
+    private lateinit var binding: ActivityCalculatorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calculator)
-        btnAdd.setOnClickListener {
-            val firstNumber = etFirstNumber.text.toString().toInt()
-            val secondNumber = etSecondNumber.text.toString().toInt()
+        binding = ActivityCalculatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnAdd.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber + secondNumber
-            tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
-        btnSubtract.setOnClickListener {
-            val firstNumber = etFirstNumber.text.toString().toInt()
-            val secondNumber = etSecondNumber.text.toString().toInt()
+        binding.btnSubtract.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber - secondNumber
-            tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
-        btnMultiply.setOnClickListener {
-            val firstNumber = etFirstNumber.text.toString().toInt()
-            val secondNumber = etSecondNumber.text.toString().toInt()
+        binding.btnMultiply.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber * secondNumber
-            tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
-        btndivide.setOnClickListener {
-            val firstNumber = etFirstNumber.text.toString().toInt()
-            val secondNumber = etSecondNumber.text.toString().toInt()
+        binding.btndivide.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber / secondNumber
-            tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
 
     }

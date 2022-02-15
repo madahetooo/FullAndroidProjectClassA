@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/which_kind_of_burger_you_need_to_order"
-        android:textColor="@color/red"
+        android:textColor="@color/red_500"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

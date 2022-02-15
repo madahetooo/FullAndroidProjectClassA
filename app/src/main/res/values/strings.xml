@@ -33,6 +33,32 @@
     <string name="events">Events</string>
     <string name="enter_your_todo">Enter your todo</string>
     <string name="dummytext">DummyText</string>
+    <string name="gdg_community">GDG Community</string>
+    <string name="hello_there">HELLO THERE,</string>
+    <string name="welcome_back">WELCOME BACK</string>
+    <string name="sign_in_to_continuo">sign in to continuo</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="new_user_sign_up">New User? Sign Up</string>
+    <string name="welcome">WELCOME,</string>
+    <string name="signup_to_start_your_new_journey">SignUp to start your new journey</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="phone_no">Phone No</string>
+    <string name="register">Register</string>
+    <string name="base_activity">BASE ACTIVITY</string>
+    <string name="ieslammedhat_gmail_com">ieslammedhat@gmail.com</string>
+    <string name="eslam_medhat">Eslam Medhat</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="remember_me">Remember me</string>
+    <string name="home">Home</string>
+    <string name="apps">Apps</string>
+    <string name="my_profile">My Profile</string>
+    <string name="home_fragment">HOME FRAGMENT</string>
+    <string name="this_is_my_apps">THIS IS MY APPS</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/myName"
+        android:icon="@drawable/members_icon"
+        android:title="My Name"/>
+    <item
+        android:id="@+id/myEmailAddress"
+        android:icon="@drawable/email_icon"
+        android:title="My Email Address"/>
+    <item
+        android:id="@+id/myPhone"
+        android:icon="@drawable/home_icon"
+        android:title="My Phone"/>
+    <item
+        android:id="@+id/myPassword"
+        android:icon="@drawable/password_icon"
+        android:title="My Password"/>
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/myName2"
+            android:icon="@drawable/members_icon"
+            android:title="My Name"/>
+        <item
+            android:id="@+id/myEmailAddress2"
+            android:icon="@drawable/email_icon"
+            android:title="My Email Address"/>
+        <item
+            android:id="@+id/myPhone2"
+            android:icon="@drawable/home_icon"
+            android:title="My Phone"/>
+        <item
+            android:id="@+id/myPassword2"
+            android:icon="@drawable/password_icon"
+            android:title="My Password"/>
+    </group>
+</menu>

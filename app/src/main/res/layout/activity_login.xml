@@ -129,9 +129,9 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red_500"
-        android:backgroundTint="@color/red_500"
+        android:background="@drawable/buttons_design"
         android:text="@string/login"
+
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

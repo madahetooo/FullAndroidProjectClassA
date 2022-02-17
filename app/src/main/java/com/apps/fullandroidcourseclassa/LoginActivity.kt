@@ -2,7 +2,6 @@ package com.apps.fullandroidcourseclassa
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -25,16 +24,16 @@ class LoginActivity : AppCompatActivity() {
         etPassword.setText(password)
 
         chkRememberMe.setOnClickListener {
-                val userName = etUsername.text.toString()
-                val password = etPassword.text.toString()
-                val isChecked = chkRememberMe.isChecked
-                //Saving the data to the SharedPreferencesFile file
-                editor.apply {
-                    putString("userName", userName)
-                    putString("password", password)
-                    putBoolean("isChecked", isChecked)
-                    apply()
-                }
+            val userName = etUsername.text.toString()
+            val password = etPassword.text.toString()
+            val isChecked = chkRememberMe.isChecked
+            //Saving the data to the SharedPreferencesFile file
+            editor.apply {
+                putString("userName", userName)
+                putString("password", password)
+                putBoolean("isChecked", isChecked)
+                apply()
+            }
 
         }
         btnLogin.setOnClickListener {
@@ -44,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
                 etUsername.setError("Please enter username")
                 etPassword.setError("Please enter password")
             } else {
-                val intent = Intent(this, OurEvents::class.java)
+                val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
             }
             //Get the data from the edit text
@@ -53,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
         tvRegister.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

@@ -4,30 +4,30 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 @Suppress("DEPRECATION")
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        btnApply.setOnClickListener {
-            val intent = Intent(this, ResturantMenu::class.java)
-            startActivity(intent)
-            val firstName = etFirstName.text.toString()
-            val lastName = etLastName.text.toString()
-            val birthDate = etBirthDate.text.toString()
-            val country = etCountry.text.toString()
+class MainActivity : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.activity_main, container, false)
+        view.btnApply.setOnClickListener {
+            val firstName = view.etFirstName.text.toString()
+            val lastName = view.etLastName.text.toString()
+            val birthDate = view.etBirthDate.text.toString()
+            val country = view.etCountry.text.toString()
             Toast.makeText(
-                this, "Welcome $firstName $lastName, " +
+                activity, "Welcome $firstName $lastName, " +
                         "you born at $birthDate in $country", Toast.LENGTH_LONG
             ).show()
         }
@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         val customList =
             listOf("Eslam", "Salman", "Haneen", "Malak", "Amr", "Safia", "Marwan", "Ahmed", "Ziad")
         val namesAdapter =
-            ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, customList)
-        spMonths.adapter = namesAdapter
-        spMonths.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            activity?.let { ArrayAdapter<String>(it, R.layout.support_simple_spinner_dropdown_item, customList) }
+        view.spMonths.adapter = namesAdapter
+        view.spMonths.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 id: Long
             ) {
                 Toast.makeText(
-                    this@MainActivity,
+                    activity,
                     "You selected ${parent?.getItemAtPosition(position).toString()}",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -56,52 +56,53 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.app_bar_menu_items, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.miEvent -> Toast.makeText(this, "Event Item", Toast.LENGTH_SHORT).show()
-            R.id.miMembers -> Toast.makeText(this, "Members Item", Toast.LENGTH_SHORT).show()
-            R.id.miCoreTeam -> Toast.makeText(this, "CoreTeam Item", Toast.LENGTH_SHORT).show()
-            R.id.miSettings -> Toast.makeText(this, "Setting Item", Toast.LENGTH_SHORT).show()
-            R.id.miLogOut -> {
-                val exitAlertDialog = AlertDialog.Builder(this)
-                    .setIcon(R.drawable.log_out_icon)
-                    .setTitle("Exit")
-                    .setCancelable(false)
-                    .setMessage("Do you want to exit ?!")
-                    .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
-                        finish()
-                    }
-                    .setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
-                        dialogInterface.cancel()
-                    }.create()
-                exitAlertDialog.show()
-            }
-        }
-        return true
-    }
-
-    var pressTwiceToExit = false // false by default
-    override fun onBackPressed() {
-        if (pressTwiceToExit == true) { // now is true
-            finish() // close the app
-            super.onBackPressed()
-        }
-        // var now is false
-
-        pressTwiceToExit = true // reassign to be a true
-        Toast.makeText(this, "Press twice to exit", Toast.LENGTH_SHORT).show()
-        Handler().postDelayed({
-            pressTwiceToExit = false
-        }, 3000)
-
-
+        return view
     }
 }
+
+//override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//    menuInflater.inflate(R.menu.app_bar_menu_items, menu)
+//    return true
+//}
+//
+//override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//    when (item.itemId) {
+//        R.id.miEvent -> Toast.makeText(activity, "Event Item", Toast.LENGTH_SHORT).show()
+//        R.id.miMembers -> Toast.makeText(activity, "Members Item", Toast.LENGTH_SHORT).show()
+//        R.id.miCoreTeam -> Toast.makeText(activity, "CoreTeam Item", Toast.LENGTH_SHORT).show()
+//        R.id.miSettings -> Toast.makeText(activity, "Setting Item", Toast.LENGTH_SHORT).show()
+//        R.id.miLogOut -> {
+//            val exitAlertDialog = AlertDialog.Builder(activity)
+//                .setIcon(R.drawable.log_out_icon)
+//                .setTitle("Exit")
+//                .setCancelable(false)
+//                .setMessage("Do you want to exit ?!")
+//                .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+//                    finish()
+//                }
+//                .setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
+//                    dialogInterface.cancel()
+//                }.create()
+//            exitAlertDialog.show()
+//        }
+//    }
+//    return true
+//}
+//
+//var pressTwiceToExit = false // false by default
+//override fun onBackPressed() {
+//    if (pressTwiceToExit == true) { // now is true
+//        finish() // close the app
+//        super.onBackPressed()
+//    }
+//    // var now is false
+//
+//    pressTwiceToExit = true // reassign to be a true
+//    Toast.makeText(this, "Press twice to exit", Toast.LENGTH_SHORT).show()
+//    Handler().postDelayed({
+//        pressTwiceToExit = false
+//    }, 3000)
+//
+//
+//}
+//}

@@ -59,6 +59,13 @@
     <string name="my_profile">My Profile</string>
     <string name="home_fragment">HOME FRAGMENT</string>
     <string name="this_is_my_apps">THIS IS MY APPS</string>
+    <string name="todo">Todo</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="calculator">Calculator</string>
+    <string name="my_email_address">My Email Address</string>
+    <string name="my_password">My Password</string>
+    <string name="counter_app">Counter App</string>
+    <string name="imageView_example">ImageView Example</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>

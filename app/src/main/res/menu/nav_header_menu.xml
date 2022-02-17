@@ -1,40 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <item
-        android:id="@+id/myName"
-        android:icon="@drawable/members_icon"
-        android:title="My Name"/>
+        android:id="@+id/miCounter"
+        android:icon="@drawable/counter_icon"
+        android:title="@string/counter_app" />
+
     <item
-        android:id="@+id/myEmailAddress"
-        android:icon="@drawable/email_icon"
-        android:title="My Email Address"/>
-    <item
-        android:id="@+id/myPhone"
-        android:icon="@drawable/home_icon"
-        android:title="My Phone"/>
-    <item
-        android:id="@+id/myPassword"
-        android:icon="@drawable/password_icon"
-        android:title="My Password"/>
-    <group
-        android:id="@+id/group1"
-        android:checkableBehavior="single">
+        android:id="@+id/miImageExample"
+        android:icon="@drawable/image_view_icon"
+        android:title="@string/imageView_example" />
+    <group android:id="@+id/group1">
         <item
-            android:id="@+id/myName2"
-            android:icon="@drawable/members_icon"
-            android:title="My Name"/>
+            android:id="@+id/miOurEvents"
+            android:icon="@drawable/event_icon"
+            android:title="@string/events" />
+
         <item
-            android:id="@+id/myEmailAddress2"
-            android:icon="@drawable/email_icon"
-            android:title="My Email Address"/>
-        <item
-            android:id="@+id/myPhone2"
-            android:icon="@drawable/home_icon"
-            android:title="My Phone"/>
-        <item
-            android:id="@+id/myPassword2"
-            android:icon="@drawable/password_icon"
-            android:title="My Password"/>
+            android:id="@+id/miLogOut"
+            android:icon="@drawable/log_out_icon"
+            android:title="@string/log_out" />
+
     </group>
 </menu>

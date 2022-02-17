@@ -12,10 +12,12 @@ class RegistrationActivity : AppCompatActivity() {
         tvLogin.setOnClickListener {
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btnRegister.setOnClickListener {
-            val intent = Intent(this,OurEvents::class.java)
+            val intent = Intent(this,BaseActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

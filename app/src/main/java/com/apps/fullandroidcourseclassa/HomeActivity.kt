@@ -10,20 +10,21 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val fragmentHome = FragmentHome()
-        val fragmentApps = FragmentApps()
-        val fragmentProfile = FragmentProfile()
-        val fragmentSettings = FragmentSettings()
+        setCurrentFragment(TodoListExample())
+        val fragmentTodoList = TodoListExample()
+        val fragmentRestaurant = RestaurantMenu()
+        val fragmentCalculator = Calculator()
+        val fragmentProfile = MainActivity()
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.miHome -> setCurrentFragment(fragmentHome)
-                R.id.miApps -> setCurrentFragment(fragmentApps)
+                R.id.miTodoList -> setCurrentFragment(fragmentTodoList)
+                R.id.miRestaurant -> setCurrentFragment(fragmentRestaurant)
+                R.id.miCalculator -> setCurrentFragment(fragmentCalculator)
                 R.id.miProfile -> setCurrentFragment(fragmentProfile)
-                R.id.miSettings -> setCurrentFragment(fragmentSettings)
             }
             true
         }
-        bottomNavigationView.getOrCreateBadge(R.id.miApps).apply {
+        bottomNavigationView.getOrCreateBadge(R.id.miTodoList).apply {
             number = 10
             isVisible = true
         }

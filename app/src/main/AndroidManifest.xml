@@ -9,17 +9,17 @@
         android:roundIcon="@drawable/dsc"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
-        <activity android:name=".OurEvents" />
+        <activity android:name=".BroadcastReceiverExample"></activity>
+        <activity android:name=".NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
         <activity android:name=".HomeActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".TodoListExample" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ResturantMenu" />
-        <activity android:name=".ImageViewExample" />
-        <activity android:name=".Calculator" />
-        <activity android:name=".Counter" />
+        <activity android:name=".LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
+        <!-- <activity android:name=".MainActivity" /> -->
+        <!-- <activity android:name=".ResturantMenu" /> -->
+        <!-- <activity android:name=".ImageViewExample" /> -->
+        <!-- <activity android:name=".Calculator" /> -->
+        <!-- <activity android:name=".Counter" /> -->
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

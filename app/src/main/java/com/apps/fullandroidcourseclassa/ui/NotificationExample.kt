@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -12,6 +12,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import com.apps.fullandroidcourseclassa.R
 import kotlinx.android.synthetic.main.activity_notification_example.*
 
 class NotificationExample : AppCompatActivity() {
@@ -24,7 +25,7 @@ class NotificationExample : AppCompatActivity() {
         createNotificationChannel()
 
 
-        val intent = Intent(this,NotificationExample::class.java)
+        val intent = Intent(this, NotificationExample::class.java)
         val pendingIntent = TaskStackBuilder.create(this).run {
             addNextIntentWithParentStack(intent)
             getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT)

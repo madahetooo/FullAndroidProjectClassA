@@ -67,6 +67,13 @@
     <string name="counter_app">Counter App</string>
     <string name="imageView_example">ImageView Example</string>
     <string name="show_notification">Show Notification</string>
+    <string name="get_started">Get Started</string>
+    <string name="next_button">Next Button</string>
+    <string name="skip">Skip</string>
+    <string name="main_image">Main Image</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="dummy">Dummy</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>

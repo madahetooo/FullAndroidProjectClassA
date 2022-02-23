@@ -1,9 +1,11 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.apps.fullandroidcourseclassa.data.AirPlaneModeChangedReceiver
+import com.apps.fullandroidcourseclassa.R
 
 class BroadcastReceiverExample : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

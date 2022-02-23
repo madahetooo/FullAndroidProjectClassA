@@ -8,4 +8,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#454545</color>
     <color name="background">#e9d8a6</color>
+
+<!--    Custom Colors-->
+    <color name="custom_colors_primary">#1C658C</color>
+    <color name="custom_colors_secondary">#398AB9</color>
+    <color name="custom_colors_secondary_light">#5992B3</color>
+    <color name="custom_colors_background">#D8D2CB</color>
+    <color name="custom_colors_text_primary">#000000</color>
+    <color name="custom_colors_text_secondary">#EEEEEE</color>
+
+
 </resources>

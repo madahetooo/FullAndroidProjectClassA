@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.apps.fullandroidcourseclassa.R
 import kotlinx.android.synthetic.main.activity_base.*
 
 class BaseActivity : AppCompatActivity() {

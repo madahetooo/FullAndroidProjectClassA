@@ -1,9 +1,10 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.apps.fullandroidcourseclassa.R
 import kotlinx.android.synthetic.main.item_view_pager.view.*
 
 class ViewPagerAdapter(var images: List<Int>) :

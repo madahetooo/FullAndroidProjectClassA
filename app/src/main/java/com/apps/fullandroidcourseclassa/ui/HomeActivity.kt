@@ -1,8 +1,9 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.apps.fullandroidcourseclassa.R
 import kotlinx.android.synthetic.main.activity_home.*
 
 @Suppress("DEPRECATION")

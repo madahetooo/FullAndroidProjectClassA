@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.activity_resturant_menu.*
+import com.apps.fullandroidcourseclassa.R
 import kotlinx.android.synthetic.main.activity_resturant_menu.view.*
-import kotlinx.android.synthetic.main.custom_toast.*
 
 @Suppress("DEPRECATION")
 class RestaurantMenu : Fragment() {

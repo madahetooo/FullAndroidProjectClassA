@@ -1,8 +1,9 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.databinding.FragmentProfileBinding
 
 class FragmentProfile : Fragment(R.layout.fragment_profile) {

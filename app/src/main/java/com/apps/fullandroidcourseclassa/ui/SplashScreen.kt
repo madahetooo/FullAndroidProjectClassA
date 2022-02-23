@@ -1,9 +1,10 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.apps.fullandroidcourseclassa.R
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {
@@ -12,7 +13,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
         supportActionBar?.hide()
         Handler().postDelayed({
-            val intent = Intent(this,BroadcastReceiverExample::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         },3000)

@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/background"
         android:padding="16dp"
-        tools:context=".LoginActivity">
+        tools:context=".ui.LoginActivity">
 
         <ImageView
             android:id="@+id/imageView3"

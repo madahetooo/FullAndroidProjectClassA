@@ -1,10 +1,9 @@
-package com.apps.fullandroidcourseclassa.ui
+package com.apps.fullandroidcourseclassa.utils
 
 import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.apps.fullandroidcourseclassa.data.AirPlaneModeChangedReceiver
 import com.apps.fullandroidcourseclassa.R
 
 class BroadcastReceiverExample : AppCompatActivity() {

@@ -4,6 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShoppingActivity">
+    android:padding="@dimen/_16sdp"
+    tools:context=".ui.shoppinglist.ShoppingActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShoppingItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddShoppingItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red_500"
+        android:backgroundTint="@color/red_500"
+        android:src="@drawable/add_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

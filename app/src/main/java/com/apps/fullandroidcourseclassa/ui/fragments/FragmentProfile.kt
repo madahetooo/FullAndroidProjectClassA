@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.ui
+package com.apps.fullandroidcourseclassa.ui.fragments
 
 import android.os.Bundle
 import android.view.View

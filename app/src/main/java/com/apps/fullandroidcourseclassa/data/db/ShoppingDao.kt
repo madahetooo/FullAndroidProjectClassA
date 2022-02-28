@@ -1,8 +1,8 @@
-package com.apps.fullandroidcourseclassa.data
+package com.apps.fullandroidcourseclassa.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.apps.fullandroidcourseclassa.data.entities.ShoppingItem
+import com.apps.fullandroidcourseclassa.data.db.entities.ShoppingItem
 
 @Dao
 interface ShoppingDao {

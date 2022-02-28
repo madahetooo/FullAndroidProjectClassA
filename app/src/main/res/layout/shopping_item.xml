@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/tvShoppingItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvShoppingItemAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dummy"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivShoppingItemDelete"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/delete_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShoppingItemName" />
+
+    <ImageView
+        android:id="@+id/ivShoppingItemMinus"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/minus_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvShoppingItemAmount" />
+
+    <ImageView
+        android:id="@+id/ivShoppingItemAdd"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/add_icon"
+        app:layout_constraintEnd_toStartOf="@+id/ivShoppingItemMinus"
+        app:layout_constraintTop_toBottomOf="@+id/tvShoppingItemAmount" />
+</androidx.constraintlayout.widget.ConstraintLayout>

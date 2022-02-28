@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.ui
+package com.apps.fullandroidcourseclassa.utils
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

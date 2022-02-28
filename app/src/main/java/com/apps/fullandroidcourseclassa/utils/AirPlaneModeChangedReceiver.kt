@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.data
+package com.apps.fullandroidcourseclassa.utils
 
 import android.content.BroadcastReceiver
 import android.content.Context

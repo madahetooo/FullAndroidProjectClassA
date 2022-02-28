@@ -1,10 +1,10 @@
-package com.apps.fullandroidcourseclassa.data
+package com.apps.fullandroidcourseclassa.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.apps.fullandroidcourseclassa.data.entities.ShoppingItem
+import com.apps.fullandroidcourseclassa.data.db.entities.ShoppingItem
 
 @Database(
     entities = [ShoppingItem::class],
@@ -18,7 +18,7 @@ abstract class ShoppingDatabase : RoomDatabase() {
         @Volatile
         private var instance: ShoppingDatabase? = null
         private val LOCK = Any()
-        fun invoke(context: Context) = instance ?: synchronized(LOCK) {
+        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
             instance ?: createDatabase(context).also {
                 instance = it
             }

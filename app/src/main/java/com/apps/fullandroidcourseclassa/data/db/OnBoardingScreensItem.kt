@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.data
+package com.apps.fullandroidcourseclassa.data.db
 
 data class OnBoardingScreensItem (
     val onBoardingScreensImage:Int,

@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.data.entities
+package com.apps.fullandroidcourseclassa.data.db.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

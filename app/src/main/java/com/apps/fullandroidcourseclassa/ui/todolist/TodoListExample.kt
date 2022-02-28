@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.ui
+package com.apps.fullandroidcourseclassa.ui.todolist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.apps.fullandroidcourseclassa.R
-import com.apps.fullandroidcourseclassa.data.Todo
+import com.apps.fullandroidcourseclassa.data.db.Todo
 import com.apps.fullandroidcourseclassa.adapters.TodoAdapter
 import kotlinx.android.synthetic.main.activity_todo_list_example.view.*
 

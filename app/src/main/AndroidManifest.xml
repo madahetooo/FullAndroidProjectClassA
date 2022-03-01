@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/dsc"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
-        <activity android:name=".ui.shoppinglist.ShoppingActivity"></activity>
+        <activity android:name=".ui.CoroutineExamples" />
         <activity android:name=".ui.SplashScreen" />
         <activity android:name=".ui.OnboardingScreens" />
         <activity android:name=".utils.BroadcastReceiverExample" />
@@ -23,7 +23,7 @@
         <!-- <activity android:name=".ImageViewExample" /> -->
         <!-- <activity android:name=".Calculator" /> -->
         <!-- <activity android:name=".Counter" /> -->
-        <activity android:name=".ui.CoroutineExamples">
+        <activity android:name=".ui.shoppinglist.ShoppingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

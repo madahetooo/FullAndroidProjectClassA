@@ -2,14 +2,19 @@ package com.apps.fullandroidcourseclassa.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.R
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+    lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        auth = FirebaseAuth.getInstance()
         //Create SharedPreferencesFile
         val sharedPreferences = getSharedPreferences("loginDataFile", MODE_PRIVATE)
         //Using Handler or Editor to get edit access
@@ -40,12 +45,25 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val userName = etUsername.text.toString()
             val password = etPassword.text.toString()
-            if (userName.isEmpty() && password.isEmpty()) {
-                etUsername.setError("Please enter username")
-                etPassword.setError("Please enter password")
-            } else {
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
+            if (userName.isNotEmpty() && password.isNotEmpty()) {
+                try {
+                    auth.signInWithEmailAndPassword(userName, password)
+                    checkedLoggedInState()
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
+                } catch (e: Exception) {
+
+                    Toast.makeText(this, e.message, Toast.LENGTH_LONG)
+                        .show()
+
+                }
+
+//                CoroutineScope(Dispatchers.IO).launch {
+//
+//                }
+
             }
             //Get the data from the edit text
 
@@ -54,6 +72,18 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
             finish()
+        }
+    }
+
+    private fun checkedLoggedInState() {
+        if (auth.currentUser == null) {
+            Toast.makeText(this, "not logged in", Toast.LENGTH_LONG)
+                .show()
+
+        }
+        else{
+            Toast.makeText(this, "Welcome", Toast.LENGTH_LONG)
+                .show()
         }
     }
 }

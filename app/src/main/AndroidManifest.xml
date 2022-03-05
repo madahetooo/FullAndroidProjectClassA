@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.apps.fullandroidcourseclassa">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/dsc"
@@ -10,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
         <activity android:name=".ui.CoroutineExamples" />
-        <activity android:name=".ui.SplashScreen" />
+        <activity android:name=".ui.shoppinglist.ShoppingActivity" />
         <activity android:name=".ui.OnboardingScreens" />
         <activity android:name=".utils.BroadcastReceiverExample" />
         <activity android:name=".utils.NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
@@ -23,7 +24,7 @@
         <!-- <activity android:name=".ImageViewExample" /> -->
         <!-- <activity android:name=".Calculator" /> -->
         <!-- <activity android:name=".Counter" /> -->
-        <activity android:name=".ui.shoppinglist.ShoppingActivity">
+        <activity android:name=".ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

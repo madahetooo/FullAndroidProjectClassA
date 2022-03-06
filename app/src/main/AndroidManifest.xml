@@ -17,8 +17,8 @@
         <activity android:name=".utils.NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.BaseActivity" />
-        <activity android:name=".ui.RegistrationActivity" />
-        <activity android:name=".ui.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
+        <activity android:name=".ui.loginsystem.RegistrationActivity" />
+        <activity android:name=".ui.loginsystem.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
         <!-- <activity android:name=".MainActivity" /> -->
         <!-- <activity android:name=".ResturantMenu" /> -->
         <!-- <activity android:name=".ImageViewExample" /> -->

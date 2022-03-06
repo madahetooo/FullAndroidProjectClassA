@@ -78,6 +78,9 @@
     <string name="enter_name">Enter Name</string>
     <string name="amount">Amount</string>
     <string name="cancel">Cancel</string>
+    <string name="already_have_account_log_in">Already have account? Log in</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="web_client_id">231141689817-6ebanjqkoalfskr2jh18h8bec9rsopoa.apps.googleusercontent.com</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>

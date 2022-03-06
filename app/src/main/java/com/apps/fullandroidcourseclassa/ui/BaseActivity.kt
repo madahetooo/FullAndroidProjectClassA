@@ -52,7 +52,8 @@ class BaseActivity : AppCompatActivity() {
                             dialogInterface.cancel()
                         }
                     val alertDialog = exitAlertDialog.create()
-                    alertDialog.show()                }
+                    alertDialog.show()
+                }
 
             }
             true

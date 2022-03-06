@@ -9,9 +9,7 @@ import com.apps.fullandroidcourseclassa.data.db.entities.ShoppingItem
 import com.apps.fullandroidcourseclassa.ui.shoppinglist.ShoppingViewModel
 import kotlinx.android.synthetic.main.shopping_item.view.*
 
-class ShoppingItemAdapter(
-    var items:List<ShoppingItem>,
-    private val viewModel:ShoppingViewModel): RecyclerView.Adapter<ShoppingItemAdapter.ShoppingViewHolder>() {
+class ShoppingItemAdapter(var items:List<ShoppingItem>, private val viewModel:ShoppingViewModel): RecyclerView.Adapter<ShoppingItemAdapter.ShoppingViewHolder>() {
         inner class ShoppingViewHolder(itemView:View): RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoppingViewHolder {

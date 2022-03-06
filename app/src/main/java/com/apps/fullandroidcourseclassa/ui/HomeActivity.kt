@@ -1,14 +1,19 @@
 package com.apps.fullandroidcourseclassa.ui
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.ui.todolist.TodoListExample
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_home.*
 
 @Suppress("DEPRECATION")
 class HomeActivity : AppCompatActivity() {
+    lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -37,4 +42,26 @@ class HomeActivity : AppCompatActivity() {
            replace(R.id.flFragment,fragment)
            commit()
        }
+    override fun onBackPressed() {
+//        super.onBackPressed()
+        val exitAlertDialog = AlertDialog.Builder(this)
+            .setIcon(R.drawable.log_out_icon)
+            .setTitle("Exit")
+            .setCancelable(false)
+            .setMessage("Do you want to exit ?!")
+            .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+                auth.signOut()
+                finish()
+            }
+            .setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
+                dialogInterface.cancel()
+            }
+        val alertDialog = exitAlertDialog.create()
+        alertDialog.show()
+    }
+
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        auth.signOut()
+//    }
 }

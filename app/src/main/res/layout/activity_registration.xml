@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:background="@color/background"
         android:padding="16dp"
-        tools:context=".ui.RegistrationActivity">
+        tools:context=".ui.loginsystem.RegistrationActivity">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -153,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/new_user_sign_up"
+            android:text="@string/already_have_account_log_in"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

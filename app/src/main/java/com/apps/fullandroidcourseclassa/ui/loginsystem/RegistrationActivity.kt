@@ -1,16 +1,13 @@
-package com.apps.fullandroidcourseclassa.ui
+package com.apps.fullandroidcourseclassa.ui.loginsystem
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.R
+import com.apps.fullandroidcourseclassa.ui.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_registration.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class RegistrationActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
@@ -24,25 +21,24 @@ class RegistrationActivity : AppCompatActivity() {
             finish()
         }
         btnRegister.setOnClickListener {
-
             val emailAddress = etEmailAddress.text.toString()
             val password = etPassword.text.toString()
             if (emailAddress.isNotEmpty() && password.isNotEmpty()) {
-                CoroutineScope(Dispatchers.IO).launch {
-                    try {
-                        auth.createUserWithEmailAndPassword(emailAddress,password)
-
-                    } catch (e: Exception) {
-                        withContext(Dispatchers.Main) {
-                            Toast.makeText(this@RegistrationActivity, e.message, Toast.LENGTH_LONG)
-                                .show()
+                auth.createUserWithEmailAndPassword(emailAddress, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            val currentUser = auth.currentUser
+                            val intent = Intent(this, BaseActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(
+                                baseContext, "Authentication failed.",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
-                }
             }
-            val intent = Intent(this, BaseActivity::class.java)
-            startActivity(intent)
-            finish()
         }
     }
 }

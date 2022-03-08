@@ -81,8 +81,20 @@
     <string name="already_have_account_log_in">Already have account? Log in</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="web_client_id">231141689817-6ebanjqkoalfskr2jh18h8bec9rsopoa.apps.googleusercontent.com</string>
-    <string name="profileinformation">ProfileInformation</string>
+    <string name="profileinformation">ProfileInformation : </string>
     <string name="retrive_data">Retrive Data</string>
+    <string name="age">Age</string>
+    <string name="new_first_name">New First Name</string>
+    <string name="old_first_name">Old First Name</string>
+    <string name="old_last_name">Old Last Name</string>
+    <string name="new_last_name">New Last Name</string>
+    <string name="old_age">Old Age</string>
+    <string name="new_age">New Age</string>
+    <string name="save_data">Save</string>
+    <string name="retrieve_data">Retrieve</string>
+    <string name="update_data">Update</string>
+    <string name="delete_data">Delete</string>
+    <string name="profiledetails">ProfileDetails:</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>

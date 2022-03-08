@@ -7,67 +7,144 @@
     android:padding="16dp"
     tools:context=".ui.MainActivity">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <EditText
-        android:id="@+id/etFirstName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="@string/first_name"
-        android:inputType="textPersonName" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/etLastName"
+        <EditText
+            android:id="@+id/etOldFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/old_first_name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etNewFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/new_first_name"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:hint="@string/last_name"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/etOldLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/old_last_name"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/etBirthDate"
+        <EditText
+            android:id="@+id/etNewLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/new_last_name"
+            android:inputType="textPersonName" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/birth_date"
-        android:inputType="date" />
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etOldAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/old_age"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etNewAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/new_age"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSaveProfileData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="@string/save_data" />
+
+        <Button
+            android:id="@+id/btnRetrieveProfileData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="@string/retrieve_data" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/btnUpdateProfileData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="@string/update_data" />
 
-    <EditText
-        android:id="@+id/etCountry"
-        android:layout_width="wrap_content"
-        android:layout_weight="3"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/country"
-        android:inputType="text" />
-
-    <Button
-        android:id="@+id/btnApply"
-        android:layout_width="wrap_content"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="@string/apply" />
+        <Button
+            android:id="@+id/btnDeleteProfileData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="@string/delete_data" />
     </LinearLayout>
 
-    <Spinner
-        android:layout_width="200dp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:entries="@array/months"
-        android:layout_marginTop="50dp"
-        android:id="@+id/spMonths"/>
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvProfileDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profiledetails"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp" />
+
+    </ScrollView>
 
 </LinearLayout>

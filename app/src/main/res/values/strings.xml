@@ -95,6 +95,9 @@
     <string name="update_data">Update</string>
     <string name="delete_data">Delete</string>
     <string name="profiledetails">ProfileDetails:</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="dowload_image">Dowload Image</string>
+    <string name="delete_image">Delete Image</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>

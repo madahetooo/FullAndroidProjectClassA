@@ -196,6 +196,5 @@ class MainActivity : Fragment() {
                 }
             }
         }
-
     }
 }

@@ -88,6 +88,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.1.0' //GOOGLE SIGN IN
     implementation 'com.google.firebase:firebase-firestore-ktx:24.0.1' // FireStore
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.0' // Storage
+    implementation 'com.google.firebase:firebase-messaging:23.0.0' //FCM, Firebase Cloud Messaging
 
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
@@ -97,4 +98,8 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }

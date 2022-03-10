@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/dsc"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
-        <activity android:name=".ui.SplashScreen"></activity>
+        <activity android:name=".CloudMessagingApp"></activity>
+        <activity android:name=".ui.SplashScreen" />
         <activity android:name=".ui.CoroutineExamples" />
         <activity android:name=".ui.shoppinglist.ShoppingActivity" />
         <activity android:name=".ui.OnboardingScreens" />

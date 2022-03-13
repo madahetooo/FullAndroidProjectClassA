@@ -3,7 +3,7 @@
     package="com.apps.fullandroidcourseclassa">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/dsc"
@@ -11,7 +11,17 @@
         android:roundIcon="@drawable/dsc"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
-        <activity android:name=".CloudMessagingApp"></activity>
+        <service
+            android:name=".utils.FirebaseService"
+            android:exported="false"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ClothingApp" />
         <activity android:name=".ui.SplashScreen" />
         <activity android:name=".ui.CoroutineExamples" />
         <activity android:name=".ui.shoppinglist.ShoppingActivity" />
@@ -27,7 +37,7 @@
         <!-- <activity android:name=".ImageViewExample" /> -->
         <!-- <activity android:name=".Calculator" /> -->
         <!-- <activity android:name=".Counter" /> -->
-        <activity android:name=".ClothingApp">
+        <activity android:name=".CloudMessagingApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.data.db.entities
+package com.apps.fullandroidcourseclassa.data.db.model
 
 data class ProfileDetails(
     var firstName: String = "",

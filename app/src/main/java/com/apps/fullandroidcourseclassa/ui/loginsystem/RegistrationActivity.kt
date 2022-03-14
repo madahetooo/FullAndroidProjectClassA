@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.R
-import com.apps.fullandroidcourseclassa.data.db.ProfileInformation
+import com.apps.fullandroidcourseclassa.data.db.model.ProfileInformation
 import com.apps.fullandroidcourseclassa.ui.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore

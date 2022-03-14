@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa.data.db
+package com.apps.fullandroidcourseclassa.data.db.model
 
 data class ProfileInformation(
     var fullName: String = "",

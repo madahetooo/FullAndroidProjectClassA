@@ -2,14 +2,11 @@ package com.apps.fullandroidcourseclassa.ui
 
 import android.os.Bundle
 import android.view.*
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.apps.fullandroidcourseclassa.R
-import com.apps.fullandroidcourseclassa.data.db.ProfileInformation
-import com.apps.fullandroidcourseclassa.data.db.entities.ProfileDetails
+import com.apps.fullandroidcourseclassa.data.db.model.ProfileDetails
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore

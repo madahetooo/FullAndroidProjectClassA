@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.adapters.ClothesImageAdapter
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage

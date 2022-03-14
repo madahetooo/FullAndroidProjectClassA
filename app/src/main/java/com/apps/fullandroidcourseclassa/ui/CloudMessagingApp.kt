@@ -1,16 +1,15 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.ui
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.apps.fullandroidcourseclassa.data.db.NotificationData
-import com.apps.fullandroidcourseclassa.data.db.PushNotification
+import com.apps.fullandroidcourseclassa.R
+import com.apps.fullandroidcourseclassa.data.db.model.NotificationData
+import com.apps.fullandroidcourseclassa.data.db.model.PushNotification
 import com.apps.fullandroidcourseclassa.data.db.RetrofitInstance
 import com.apps.fullandroidcourseclassa.utils.FirebaseService
-import com.google.firebase.iid.FirebaseInstanceIdReceiver
-import com.google.firebase.iid.internal.FirebaseInstanceIdInternal
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_cloud_messaging_app.*

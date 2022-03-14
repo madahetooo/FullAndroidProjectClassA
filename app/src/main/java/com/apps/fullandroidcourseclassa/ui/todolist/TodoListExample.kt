@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.apps.fullandroidcourseclassa.R
-import com.apps.fullandroidcourseclassa.data.db.Todo
+import com.apps.fullandroidcourseclassa.data.db.model.Todo
 import com.apps.fullandroidcourseclassa.adapters.TodoAdapter
 import kotlinx.android.synthetic.main.activity_todo_list_example.view.*
 

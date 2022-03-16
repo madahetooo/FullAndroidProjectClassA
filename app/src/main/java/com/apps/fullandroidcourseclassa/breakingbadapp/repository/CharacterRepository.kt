@@ -10,7 +10,6 @@ import kotlinx.coroutines.withContext
 class CharacterRepository(private val characterDao: CharacterDao) {
 
     var characters:LiveData<List<BBCharacter>> = characterDao.findAllCharacters()
-
     suspend fun refreshCharacters(){
         withContext(Dispatchers.IO){
             val characters = BreakingBadNetwork.serviceApi.getCharacters()

@@ -7,7 +7,7 @@ object AppTypeConverters {
     @TypeConverter
     @JvmStatic
     fun arrayStringToString(value:Array<String>?):String?{
-        return value?.joinToString { "|" }
+        return value?.joinToString(" | ")
     }
 
     @TypeConverter

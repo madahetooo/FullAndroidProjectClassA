@@ -8,26 +8,26 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.data.db.model.OnBoardingScreensItem
+import com.apps.fullandroidcourseclassa.databinding.OnboardingItemBinding
 
 class OnBoardingScreensItemAdapter (private val onBoardingScreenItem : List<OnBoardingScreensItem>) : RecyclerView.Adapter<OnBoardingScreensItemAdapter.OnBoardingScreenItemViewHolder>(){
 
-    inner class OnBoardingScreenItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class OnBoardingScreenItemViewHolder(val binding:OnboardingItemBinding) : RecyclerView.ViewHolder(binding.root){
         private  val ivOnBoardingImage = itemView.findViewById<ImageView>(R.id.ivOnBoardingImage)
         private  val tvTitle = itemView.findViewById<TextView>(R.id.tvTitle)
         private  val tvDescription = itemView.findViewById<TextView>(R.id.tvDescription)
 
         fun bind(onBoardingScreensItem: OnBoardingScreensItem){
-            ivOnBoardingImage.setImageResource(onBoardingScreensItem.onBoardingScreensImage)
-            tvTitle.text = onBoardingScreensItem.title
-            tvDescription.text = onBoardingScreensItem.description
+            binding.ivOnBoardingImage.setImageResource(onBoardingScreensItem.onBoardingScreensImage)
+            binding.tvTitle.text = onBoardingScreensItem.title
+            binding.tvDescription.text = onBoardingScreensItem.description
 
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingScreenItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.onboarding_item, parent, false)
-        return OnBoardingScreenItemViewHolder(view)
+        return OnBoardingScreenItemViewHolder(OnboardingItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: OnBoardingScreenItemViewHolder, position: Int) {

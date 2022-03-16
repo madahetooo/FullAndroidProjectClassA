@@ -6,16 +6,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.data.db.entities.ShoppingItem
-import kotlinx.android.synthetic.main.dialog_add_shopping_item.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityRegistrationBinding
+import com.apps.fullandroidcourseclassa.databinding.DialogAddShoppingItemBinding
 
 class AddShoppingItemDialog(context: Context, var addDialogListener: AddDialogListener):AppCompatDialog(context) {
+    private lateinit var binding: DialogAddShoppingItemBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog_add_shopping_item)
-
-        tvAddShoppingItemAdd.setOnClickListener {
-           val shoppingItemName= etShoppingItemDialogName.text.toString()
-           val shoppingItemAmount= etShoppingItemDialogAmount.text.toString()
+        binding = DialogAddShoppingItemBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        binding.tvAddShoppingItemAdd.setOnClickListener {
+           val shoppingItemName= binding.etShoppingItemDialogName.text.toString()
+           val shoppingItemAmount= binding.etShoppingItemDialogAmount.text.toString()
             if (shoppingItemName.isEmpty() ||shoppingItemAmount.isEmpty() ){
                 Toast.makeText(context,"Please enter all information",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -24,7 +27,7 @@ class AddShoppingItemDialog(context: Context, var addDialogListener: AddDialogLi
             addDialogListener.onAddButtonClicked(item)
             dismiss()
         }
-        tvAddShoppingItemCancel.setOnClickListener {
+        binding.tvAddShoppingItemCancel.setOnClickListener {
             cancel()
         }
 

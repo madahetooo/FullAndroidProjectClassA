@@ -102,6 +102,10 @@
     <string name="enter_notification_message">Enter Notification Message</string>
     <string name="user_device_token">User Device Token</string>
     <string name="send_notification">Send Notification</string>
+    <string name="fragment_character_list">Fragment Character List</string>
+    <string name="fragment_character_image">Fragment Character Image</string>
+    <string name="characterphoto">CharacterPhoto</string>
+    <string name="characterimage">CharacterImage</string>
 
     <string-array name="months">
         <item>Jan</item>

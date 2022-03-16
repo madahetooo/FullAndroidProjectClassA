@@ -13,15 +13,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.apps.fullandroidcourseclassa.R
-import kotlinx.android.synthetic.main.activity_notification_example.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityNotificationExampleBinding
 
 class NotificationExample : AppCompatActivity() {
     val CHANNEL_ID = "gdgEventTicketChannelID"
     val CHANNEL_NAME = "gdgEventChannelName"
     val NOTIFICATION_ID = 0
+    private lateinit var binding:ActivityNotificationExampleBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notification_example)
+        binding = ActivityNotificationExampleBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         createNotificationChannel()
 
 
@@ -40,7 +43,7 @@ class NotificationExample : AppCompatActivity() {
             .build()
 
         val eventTicketNotificationManger = NotificationManagerCompat.from(this)
-        btnShowNotification.setOnClickListener {
+        binding.btnShowNotification.setOnClickListener {
             eventTicketNotificationManger.notify(NOTIFICATION_ID,eventTicketNotification)
         }
 

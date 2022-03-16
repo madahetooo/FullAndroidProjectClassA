@@ -6,20 +6,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.data.db.model.Todo
-import kotlinx.android.synthetic.main.item_todo.view.*
+import com.apps.fullandroidcourseclassa.databinding.ItemTodoBinding
 
 class TodoAdapter(var todos: List<Todo>) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
-    inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class TodoViewHolder(val binding:ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_todo, parent, false)
-        return TodoViewHolder(view)
+         return TodoViewHolder(ItemTodoBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
 
-        holder.itemView.apply {
+        holder.binding.apply {
             tvTodoTitle.text = todos[position].title
             cbTodoDone.isChecked = todos[position].isChecked
         }

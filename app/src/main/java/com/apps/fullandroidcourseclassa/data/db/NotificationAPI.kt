@@ -1,7 +1,7 @@
 package com.apps.fullandroidcourseclassa.data.db
 
-import com.apps.fullandroidcourseclassa.Constants.Companion.CONTENT_TYPE
-import com.apps.fullandroidcourseclassa.Constants.Companion.SERVER_KEY
+import com.apps.fullandroidcourseclassa.utils.Constants.Companion.CONTENT_TYPE
+import com.apps.fullandroidcourseclassa.utils.Constants.Companion.SERVER_KEY
 import com.apps.fullandroidcourseclassa.data.db.model.PushNotification
 import okhttp3.ResponseBody
 import retrofit2.Response

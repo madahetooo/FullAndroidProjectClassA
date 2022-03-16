@@ -1,6 +1,6 @@
 package com.apps.fullandroidcourseclassa.data.db
 
-import com.apps.fullandroidcourseclassa.Constants
+import com.apps.fullandroidcourseclassa.utils.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

@@ -9,18 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.adapters.ViewPagerAdapter
+import com.apps.fullandroidcourseclassa.databinding.ActivityOurEventsBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_our_events.view.*
 
 class OurEvents : Fragment() {
+    private var _binding: ActivityOurEventsBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.activity_our_events, container, false)
+        _binding= ActivityOurEventsBinding.inflate(inflater, container, false)
+        val view = binding.root
         val viewpagger = view.findViewById<ViewPager2>(R.id.viewPagerOfEvents)
         val tabLayout = view.findViewById<TabLayout>(R.id.tabLayoutOfEvents)
         val images = listOf(
@@ -34,11 +39,11 @@ class OurEvents : Fragment() {
             R.drawable.eventtwo,
         )
         val myAdapter = ViewPagerAdapter(images)
-        view.viewPagerOfEvents.adapter = myAdapter
+        binding.viewPagerOfEvents.adapter = myAdapter
         TabLayoutMediator(tabLayout, viewpagger) { tab, position ->
             tab.text = "Tab ${position + 1}"
         }.attach()
-        view.tabLayoutOfEvents.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding.tabLayoutOfEvents.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 Toast.makeText(activity, "Selected ${tab?.text}", Toast.LENGTH_SHORT).show()
             }
@@ -58,6 +63,10 @@ class OurEvents : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
 

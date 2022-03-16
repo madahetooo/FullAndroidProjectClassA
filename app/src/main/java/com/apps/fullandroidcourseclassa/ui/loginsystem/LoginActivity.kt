@@ -5,22 +5,25 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.R
+import com.apps.fullandroidcourseclassa.databinding.ActivityLoginBinding
 import com.apps.fullandroidcourseclassa.ui.HomeActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import kotlinx.android.synthetic.main.activity_login.*
 
 const val REQUEST_CODE_SIGN_IN = 0
 
 @Suppress("DEPRECATION")
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
     lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         auth = FirebaseAuth.getInstance()
         val sharedPreferences = getSharedPreferences("loginDataFile", MODE_PRIVATE)
         //Using Handler or Editor to get edit access
@@ -30,15 +33,15 @@ class LoginActivity : AppCompatActivity() {
         val username = sharedPreferences.getString("userName", null)
         val password = sharedPreferences.getString("password", null)
         val isChecked = sharedPreferences.getBoolean("isChecked", false)
-        chkRememberMe.isChecked = isChecked
+        binding.chkRememberMe.isChecked = isChecked
         //Set the saved data on the edit texts
-        etUsername.setText(username)
-        etPassword.setText(password)
+        binding.etUsername.setText(username)
+        binding.etPassword.setText(password)
 
-        chkRememberMe.setOnClickListener {
-            val userName = etUsername.text.toString()
-            val password = etPassword.text.toString()
-            val isChecked = chkRememberMe.isChecked
+        binding.chkRememberMe.setOnClickListener {
+            val userName = binding.etUsername.text.toString()
+            val password = binding.etPassword.text.toString()
+            val isChecked = binding.chkRememberMe.isChecked
             //Saving the data to the SharedPreferencesFile file
             editor.apply {
                 putString("userName", userName)
@@ -47,9 +50,9 @@ class LoginActivity : AppCompatActivity() {
                 apply()
             }
         }
-        btnLogin.setOnClickListener {
-            val userName = etUsername.text.toString()
-            val password = etPassword.text.toString()
+        binding.btnLogin.setOnClickListener {
+            val userName = binding.etUsername.text.toString()
+            val password = binding.etPassword.text.toString()
             if (userName.isNotEmpty() && password.isNotEmpty()) {
                 auth.signInWithEmailAndPassword(userName, password)
                     .addOnCompleteListener(this) { task ->
@@ -69,12 +72,12 @@ class LoginActivity : AppCompatActivity() {
                     }
             }
         }
-        tvRegister.setOnClickListener {
+        binding.tvRegister.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
             finish()
         }
-        btnSignInWithGoogle.setOnClickListener {
+        binding.btnSignInWithGoogle.setOnClickListener {
             val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.web_client_id))
                 .requestEmail()
@@ -132,7 +135,6 @@ class LoginActivity : AppCompatActivity() {
 }
 
 
-//Create SharedPreferencesFile
 
 
 

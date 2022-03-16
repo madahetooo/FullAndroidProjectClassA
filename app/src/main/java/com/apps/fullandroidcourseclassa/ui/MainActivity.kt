@@ -7,15 +7,12 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.data.db.model.ProfileDetails
+import com.apps.fullandroidcourseclassa.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_image_view_example.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
-import kotlinx.android.synthetic.main.activity_registration.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,13 +22,18 @@ import kotlinx.coroutines.withContext
 @Suppress("DEPRECATION")
 class MainActivity : Fragment() {
     lateinit var auth: FirebaseAuth
+    private var _binding:ActivityMainBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
     private val profileDetailsCollection = Firebase.firestore.collection("profileDetails")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.activity_main, container, false)
+        _binding= ActivityMainBinding.inflate(inflater, container, false)
+        val view = binding.root
         auth = FirebaseAuth.getInstance()
         subscribeToRealTimeUpdates()
         val btnSaveData = view.findViewById<Button>(R.id.btnSaveProfileData)
@@ -58,16 +60,16 @@ class MainActivity : Fragment() {
         return view
     }
     private fun getOldProfileDetails(): ProfileDetails {
-        val oldFirstName = etOldFirstName.text.toString()
-        val oldLastName = etOldLastName.text.toString()
-        val oldAge = etOldAge.text.toString().toInt()
+        val oldFirstName = binding.etOldFirstName.text.toString()
+        val oldLastName = binding.etOldLastName.text.toString()
+        val oldAge = binding.etOldAge.text.toString().toInt()
         return ProfileDetails(oldFirstName,oldLastName,oldAge)
     }
 
     private fun getNewProfileDetails(): Map<String,Any> {
-        val newFirstName = etNewFirstName.text.toString()
-        val newLastName = etNewLastName.text.toString()
-        val newAge = etNewAge.text.toString()
+        val newFirstName = binding.etNewFirstName.text.toString()
+        val newLastName = binding.etNewLastName.text.toString()
+        val newAge = binding.etNewAge.text.toString()
         val map = mutableMapOf<String,Any>()
         if (newFirstName.isNotEmpty()){
             map ["firstName"] = newFirstName
@@ -107,7 +109,7 @@ class MainActivity : Fragment() {
                     stringBuilder.append("$profileDetails\n")
                 }
                 withContext(Dispatchers.Main) {
-                    tvProfileDetails.text = stringBuilder.toString()
+                    binding.tvProfileDetails.text = stringBuilder.toString()
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
@@ -129,7 +131,7 @@ class MainActivity : Fragment() {
                     val profileDetails = document.toObject<ProfileDetails>()
                     stringBuilder.append("$profileDetails")
                 }
-                tvProfileDetails.text = stringBuilder.toString()
+                binding.tvProfileDetails.text = stringBuilder.toString()
             }
         }
     }

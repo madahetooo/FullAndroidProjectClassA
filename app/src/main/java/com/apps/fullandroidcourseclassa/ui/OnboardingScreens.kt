@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.adapters.OnBoardingScreensItemAdapter
 import com.apps.fullandroidcourseclassa.data.db.model.OnBoardingScreensItem
-import kotlinx.android.synthetic.main.activity_onboarding_screens.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityOnboardingScreensBinding
 
 class OnboardingScreens : AppCompatActivity() {
     private lateinit var onBoardingScreensItemAdapter: OnBoardingScreensItemAdapter
+    private lateinit var binding: ActivityOnboardingScreensBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding_screens)
+        binding = ActivityOnboardingScreensBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         setupOnBoardingScreenItem()
     }
 
@@ -35,7 +38,7 @@ class OnboardingScreens : AppCompatActivity() {
                 ),
             )
         )
-        onBoardingViewPager.adapter = onBoardingScreensItemAdapter
+        binding.onBoardingViewPager.adapter = onBoardingScreensItemAdapter
     }
 
     private fun setupIndicators(){

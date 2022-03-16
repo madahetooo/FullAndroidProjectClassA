@@ -6,20 +6,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.apps.fullandroidcourseclassa.R
-import kotlinx.android.synthetic.main.activity_counter.view.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityCounterBinding
 
 class Counter : Fragment() {
+    private var _binding: ActivityCounterBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.activity_counter, container, false)
+        _binding = ActivityCounterBinding.inflate(inflater, container, false)
+        val view = binding.root
         var count = 0
-        view.btnCount.setOnClickListener {
+        binding.btnCount.setOnClickListener {
             count++
-            view.tvCount.text = " Lets Count together $count"
+            binding.tvCount.text = " Lets Count together $count"
         }
         return view
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

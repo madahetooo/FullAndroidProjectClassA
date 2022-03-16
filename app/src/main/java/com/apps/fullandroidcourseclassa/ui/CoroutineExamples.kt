@@ -4,15 +4,19 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.R
+import com.apps.fullandroidcourseclassa.databinding.ActivityCloudMessagingAppBinding
+import com.apps.fullandroidcourseclassa.databinding.ActivityCoroutineExamplesBinding
 import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
 class CoroutineExamples : AppCompatActivity() {
     val TAG = "CoroutineExamples"
+    private lateinit var binding: ActivityCoroutineExamplesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coroutine_examples)
-
+        binding = ActivityCoroutineExamplesBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         GlobalScope.async(Dispatchers.IO) {
             val time = measureTimeMillis {
                 val answer1 = async { networkCall1() }

@@ -9,16 +9,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.data.db.model.Todo
 import com.apps.fullandroidcourseclassa.adapters.TodoAdapter
-import kotlinx.android.synthetic.main.activity_todo_list_example.view.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityTodoListExampleBinding
 
 class TodoListExample : Fragment() {
-
+    private var _binding: ActivityTodoListExampleBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.activity_todo_list_example, container, false)
+        _binding = ActivityTodoListExampleBinding.inflate(inflater, container, false)
+        val view = binding.root
         var todoList = mutableListOf(
             Todo("Buy Pizza", false),
             Todo("Buy Burger", false),
@@ -36,15 +40,15 @@ class TodoListExample : Fragment() {
             Todo("Give Android Session6", false),
         )
         val adapter = TodoAdapter(todoList)
-        view.rvTodo.adapter = adapter
-        view.rvTodo.layoutManager = LinearLayoutManager(activity)
-        view.btnAddTodo.setOnClickListener {
-            val newTodoTitle = view.etTodo.text.toString()
+        binding.rvTodo.adapter = adapter
+        binding.rvTodo.layoutManager = LinearLayoutManager(activity)
+        binding.btnAddTodo.setOnClickListener {
+            val newTodoTitle = binding.etTodo.text.toString()
             val newTodo = Todo(newTodoTitle, false)
             todoList.add(newTodo)
 //            adapter.notifyDataSetChanged() // Refresh the whole adapter
             adapter.notifyItemInserted(todoList.size - 1)  // Insert only without refresh
-            view.etTodo.text.clear()
+            binding.etTodo.text.clear()
         }
         return view
     }

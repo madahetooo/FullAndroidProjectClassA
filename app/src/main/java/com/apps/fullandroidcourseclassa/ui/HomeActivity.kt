@@ -7,25 +7,29 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.apps.fullandroidcourseclassa.R
+import com.apps.fullandroidcourseclassa.databinding.ActivityCoroutineExamplesBinding
+import com.apps.fullandroidcourseclassa.databinding.ActivityHomeBinding
 import com.apps.fullandroidcourseclassa.ui.loginsystem.LoginActivity
 import com.apps.fullandroidcourseclassa.ui.todolist.TodoListExample
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_home.*
 
 @Suppress("DEPRECATION")
 class HomeActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         auth = FirebaseAuth.getInstance()
         setCurrentFragment(TodoListExample())
         val fragmentTodoList = TodoListExample()
         val fragmentRestaurant = RestaurantMenu()
         val fragmentCalculator = Calculator()
         val fragmentProfile = MainActivity()
-        bottomNavigationView.setOnNavigationItemSelectedListener {
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.miTodoList -> setCurrentFragment(fragmentTodoList)
                 R.id.miRestaurant -> setCurrentFragment(fragmentRestaurant)
@@ -34,7 +38,7 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         }
-        bottomNavigationView.getOrCreateBadge(R.id.miTodoList).apply {
+        binding.bottomNavigationView.getOrCreateBadge(R.id.miTodoList).apply {
             number = 10
             isVisible = true
         }

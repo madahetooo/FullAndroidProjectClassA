@@ -1,4 +1,4 @@
-package com.apps.fullandroidcourseclassa
+package com.apps.fullandroidcourseclassa.utils
 
 class Constants {
     companion object {

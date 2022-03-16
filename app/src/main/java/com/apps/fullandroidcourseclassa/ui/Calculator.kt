@@ -6,39 +6,48 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.apps.fullandroidcourseclassa.R
-import kotlinx.android.synthetic.main.activity_calculator.view.*
+import com.apps.fullandroidcourseclassa.databinding.ActivityCalculatorBinding
 
 class Calculator : Fragment() {
+    private var _binding: ActivityCalculatorBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.activity_calculator, container, false)
-        view.btnAdd.setOnClickListener {
-            val firstNumber = view.etFirstNumber.text.toString().toInt()
-            val secondNumber = view.etSecondNumber.text.toString().toInt()
+        _binding = ActivityCalculatorBinding.inflate(inflater, container, false)
+        val view = binding.root
+        binding.btnAdd.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber + secondNumber
-            view.tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
-        view.btnSubtract.setOnClickListener {
-            val firstNumber = view.etFirstNumber.text.toString().toInt()
-            val secondNumber = view.etSecondNumber.text.toString().toInt()
+        binding.btnSubtract.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber - secondNumber
-            view.tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
-        view.btnMultiply.setOnClickListener {
-            val firstNumber = view.etFirstNumber.text.toString().toInt()
-            val secondNumber = view.etSecondNumber.text.toString().toInt()
+        binding.btnMultiply.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber * secondNumber
-            view.tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
-        view.btndivide.setOnClickListener {
-            val firstNumber = view.etFirstNumber.text.toString().toInt()
-            val secondNumber = view.etSecondNumber.text.toString().toInt()
+        binding.btndivide.setOnClickListener {
+            val firstNumber = binding.etFirstNumber.text.toString().toInt()
+            val secondNumber = binding.etSecondNumber.text.toString().toInt()
             val result = firstNumber / secondNumber
-            view.tvResult.text = result.toString()
+            binding.tvResult.text = result.toString()
         }
         return view
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -10,9 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.adapters.ClothesImageAdapter
+import com.apps.fullandroidcourseclassa.databinding.ActivityBaseBinding
+import com.apps.fullandroidcourseclassa.databinding.ActivityClothingAppBinding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import kotlinx.android.synthetic.main.activity_clothing_app.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,27 +26,29 @@ private const val REQUEST_CODE_IMAGE_PICK = 0
 class ClothingApp : AppCompatActivity() {
     var currentImage: Uri? = null
     val imageReference = Firebase.storage.reference
+    private lateinit var binding: ActivityClothingAppBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_clothing_app)
-
+        binding = ActivityClothingAppBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         //OPEN GALLERY
-        ivClothingImage.setOnClickListener {
+        binding.ivClothingImage.setOnClickListener {
             Intent(Intent.ACTION_GET_CONTENT).also {
                 it.type = "image/*"
                 startActivityForResult(it, REQUEST_CODE_IMAGE_PICK)
             }
         }
         //UPLOAD IMAGE
-        btnUploadImage.setOnClickListener {
+        binding.btnUploadImage.setOnClickListener {
             uploadImageToStorage("myImage")
         }
         //DOWNLOAD IMAGE
-        btnDownloadImage.setOnClickListener {
+        binding.btnDownloadImage.setOnClickListener {
             downloadImageFromStorage("myImage")
         }
         //DELETE IMAGE
-        btnDeleteImage.setOnClickListener {
+        binding.btnDeleteImage.setOnClickListener {
             deleteImageFromStorage("myImage")
         }
         listAllImagesFromStorage()
@@ -57,7 +60,7 @@ class ClothingApp : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_IMAGE_PICK) {
             data?.data.let {
                 currentImage = it
-                ivClothingImage.setImageURI(currentImage)
+                binding.ivClothingImage.setImageURI(currentImage)
             }
         }
     }
@@ -93,7 +96,7 @@ class ClothingApp : AppCompatActivity() {
                     imageReference.child("images/$fileName").getBytes(maxDownloadSize).await()
                 val imageBitMap = BitmapFactory.decodeByteArray(imageByte, 0, imageByte.size)
                 withContext(Dispatchers.Main) {
-                    ivClothingImage.setImageBitmap(imageBitMap)
+                    binding.ivClothingImage.setImageBitmap(imageBitMap)
                 }
 
             } catch (e: Exception) {
@@ -136,7 +139,7 @@ class ClothingApp : AppCompatActivity() {
                 }
                 withContext(Dispatchers.Main) {
                     val clothesImageAdapter = ClothesImageAdapter(listOfImagesUrls)
-                    rvClothingImages.apply {
+                    binding.rvClothingImages.apply {
                         adapter = clothesImageAdapter
                         layoutManager = LinearLayoutManager(this@ClothingApp)
                     }

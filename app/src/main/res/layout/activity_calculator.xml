@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.Calculator">
+    tools:context=".otherapps.ui.others.Calculator">
 
     <EditText
         android:id="@+id/etFirstNumber"

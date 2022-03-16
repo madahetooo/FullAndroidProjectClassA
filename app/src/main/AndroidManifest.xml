@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
         <service
-            android:name=".utils.FirebaseService"
+            android:name="com.apps.fullandroidcourseclassa.pushnotificationapp.service.FirebaseService"
             android:exported="false"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
@@ -24,16 +24,16 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".ui.SplashScreen" />
-        <activity android:name=".ui.CoroutineExamples" />
-        <activity android:name=".ui.shoppinglist.ShoppingActivity" />
-        <activity android:name=".ui.OnboardingScreens" />
-        <activity android:name=".ui.BroadcastReceiverExample" />
-        <activity android:name=".utils.NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
-        <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.BaseActivity" />
-        <activity android:name=".ui.loginsystem.RegistrationActivity" />
-        <activity android:name=".ui.loginsystem.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
+        <activity android:name=".otherapps.ui.base.SplashScreen" />
+        <activity android:name=".otherapps.ui.utils.CoroutineExamples" />
+        <activity android:name=".shoppinglistapp.ui.ShoppingActivity" />
+        <activity android:name=".onboardingscreen.ui.OnboardingScreens" />
+        <activity android:name=".otherapps.ui.utils.BroadcastReceiverExample" />
+        <activity android:name="com.apps.fullandroidcourseclassa.otherapps.ui.utils.NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
+        <activity android:name=".otherapps.ui.base.HomeActivity" />
+        <activity android:name=".otherapps.ui.base.BaseActivity" />
+        <activity android:name="com.apps.fullandroidcourseclassa.otherapps.ui.loginsystem.RegistrationActivity" />
+        <activity android:name="com.apps.fullandroidcourseclassa.otherapps.ui.loginsystem.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
         <activity android:name=".breakingbadapp.ui.BreakingBad"
             android:exported="true"
             tools:ignore="DuplicateActivity">

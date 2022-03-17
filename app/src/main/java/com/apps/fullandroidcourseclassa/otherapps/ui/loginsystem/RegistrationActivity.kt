@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.apps.fullandroidcourseclassa.MotherOfTheApps
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.firebasefirestoreapp.model.ProfileInformation
 import com.apps.fullandroidcourseclassa.databinding.ActivityRegistrationBinding
@@ -42,7 +43,7 @@ class RegistrationActivity : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             val currentUser = auth.currentUser
-                            val intent = Intent(this, BaseActivity::class.java)
+                            val intent = Intent(this, MotherOfTheApps::class.java)
                             startActivity(intent)
                             finish()
                         } else {

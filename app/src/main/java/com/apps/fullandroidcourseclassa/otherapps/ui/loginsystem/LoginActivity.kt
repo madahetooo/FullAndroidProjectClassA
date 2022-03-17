@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.apps.fullandroidcourseclassa.MotherOfTheApps
 import com.apps.fullandroidcourseclassa.R
 import com.apps.fullandroidcourseclassa.databinding.ActivityLoginBinding
 import com.apps.fullandroidcourseclassa.otherapps.ui.base.HomeActivity
@@ -59,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             val currentUser = auth.currentUser
-                            val intent = Intent(this, HomeActivity::class.java)
+                            val intent = Intent(this, MotherOfTheApps::class.java)
                             startActivity(intent)
                             finish()
                         } else {
@@ -75,7 +76,6 @@ class LoginActivity : AppCompatActivity() {
         binding.tvRegister.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
-            finish()
         }
         binding.btnSignInWithGoogle.setOnClickListener {
             val options = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -109,7 +109,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val currentUser = auth.currentUser
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, MotherOfTheApps::class.java)
                     startActivity(intent)
                     finish()
                     // Sign in success, update UI with the signed-in user's information
@@ -128,7 +128,7 @@ class LoginActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, MotherOfTheApps::class.java)
             startActivity(intent)
         }
     }

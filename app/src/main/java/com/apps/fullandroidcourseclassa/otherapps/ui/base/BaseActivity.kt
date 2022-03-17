@@ -90,24 +90,4 @@ class BaseActivity : AppCompatActivity() {
             commit()
         }
 
-    override fun onBackPressed() {
-//        super.onBackPressed()
-        val exitAlertDialog = AlertDialog.Builder(this)
-            .setIcon(R.drawable.log_out_icon)
-            .setTitle("Exit")
-            .setCancelable(false)
-            .setMessage("Do you want to exit ?!")
-            .setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
-                auth.signOut()
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-            }
-            .setNegativeButton("No") { dialogInterface: DialogInterface, i: Int ->
-                dialogInterface.cancel()
-            }
-        val alertDialog = exitAlertDialog.create()
-        alertDialog.show()
-    }
-
 }

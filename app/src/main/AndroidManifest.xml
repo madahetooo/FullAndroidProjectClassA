@@ -14,8 +14,12 @@
         android:roundIcon="@drawable/dsc"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
+        <activity
+            android:name=".MotherOfTheApps"
+            android:exported="false" />
+
         <service
-            android:name="com.apps.fullandroidcourseclassa.pushnotificationapp.service.FirebaseService"
+            android:name=".pushnotificationapp.service.FirebaseService"
             android:exported="false"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
@@ -24,17 +28,20 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".otherapps.ui.base.SplashScreen" />
+        <activity android:name=".breakingbadapp.ui.BreakingBad" />
+        <activity android:name=".clothesapp.ui.ClothingApp" />
+        <activity android:name=".pushnotificationapp.ui.CloudMessagingApp" />
         <activity android:name=".otherapps.ui.utils.CoroutineExamples" />
         <activity android:name=".shoppinglistapp.ui.ShoppingActivity" />
         <activity android:name=".onboardingscreen.ui.OnboardingScreens" />
         <activity android:name=".otherapps.ui.utils.BroadcastReceiverExample" />
-        <activity android:name="com.apps.fullandroidcourseclassa.otherapps.ui.utils.NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
+        <activity android:name=".otherapps.ui.utils.NotificationExample" /> <!-- <activity android:name=".OurEvents" /> -->
         <activity android:name=".otherapps.ui.base.HomeActivity" />
         <activity android:name=".otherapps.ui.base.BaseActivity" />
-        <activity android:name="com.apps.fullandroidcourseclassa.otherapps.ui.loginsystem.RegistrationActivity" />
-        <activity android:name="com.apps.fullandroidcourseclassa.otherapps.ui.loginsystem.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
-        <activity android:name=".breakingbadapp.ui.BreakingBad"
+        <activity android:name=".otherapps.ui.loginsystem.RegistrationActivity" />
+        <activity android:name=".otherapps.ui.loginsystem.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
+        <activity
+            android:name=".otherapps.ui.base.SplashScreen"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>

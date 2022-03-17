@@ -106,6 +106,12 @@
     <string name="fragment_character_image">Fragment Character Image</string>
     <string name="characterphoto">CharacterPhoto</string>
     <string name="characterimage">CharacterImage</string>
+    <string name="todolist_calculator">Todolist + Calculator</string>
+    <string name="speakers_counter">Speakers + Counter</string>
+    <string name="breaking_bad_api">Breaking Bad Api</string>
+    <string name="shopping_list_item_app">Shopping List Item App</string>
+    <string name="clothes_app">Clothes App</string>
+    <string name="push_notification_app">Push Notification App</string>
 
     <string-array name="months">
         <item>Jan</item>

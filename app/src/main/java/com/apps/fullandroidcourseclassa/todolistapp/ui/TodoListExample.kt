@@ -23,20 +23,7 @@ class TodoListExample : Fragment() {
         _binding = ActivityTodoListExampleBinding.inflate(inflater, container, false)
         val view = binding.root
         var todoList = mutableListOf(
-            Todo("Buy Pizza", false),
-            Todo("Buy Burger", false),
-            Todo("Buy Pepsi", false),
-            Todo("Study Python", false),
-            Todo("Take Android Exam", false),
-            Todo("Visit Cairo", false),
-            Todo("Solve the android task", false),
-            Todo("Give Android Session1", false),
-            Todo("Give Android Session2", false),
-            Todo("Give Android Session3", false),
-            Todo("Give Android Session4", false),
-            Todo("Give Android Session5", false),
-            Todo("Give Android Session6", false),
-            Todo("Give Android Session6", false),
+            Todo("Todo Example", false),
         )
         val adapter = TodoAdapter(todoList)
         binding.rvTodo.adapter = adapter

@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
         <activity
+            android:name=".todolistapi.ui.TodoListApiApp"
+            android:exported="false" />
+        <activity
             android:name=".MotherOfTheApps"
             android:exported="false" />
 

@@ -2,19 +2,18 @@ package com.apps.fullandroidcourseclassa
 
 import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.apps.fullandroidcourseclassa.breakingbadapp.ui.BreakingBad
 import com.apps.fullandroidcourseclassa.clothesapp.ui.ClothingApp
 import com.apps.fullandroidcourseclassa.databinding.ActivityMotherOfTheAppsBinding
 import com.apps.fullandroidcourseclassa.otherapps.ui.base.BaseActivity
 import com.apps.fullandroidcourseclassa.otherapps.ui.base.HomeActivity
 import com.apps.fullandroidcourseclassa.otherapps.ui.loginsystem.LoginActivity
-import com.apps.fullandroidcourseclassa.otherapps.ui.loginsystem.RegistrationActivity
-import com.apps.fullandroidcourseclassa.pushnotificationapp.model.PushNotification
 import com.apps.fullandroidcourseclassa.pushnotificationapp.ui.CloudMessagingApp
 import com.apps.fullandroidcourseclassa.shoppinglistapp.ui.ShoppingActivity
+import com.apps.fullandroidcourseclassa.todolistapi.ui.TodoListApiApp
 import com.google.firebase.auth.FirebaseAuth
 
 class MotherOfTheApps : AppCompatActivity() {
@@ -50,7 +49,12 @@ class MotherOfTheApps : AppCompatActivity() {
             val intent = Intent(this, CloudMessagingApp::class.java)
             startActivity(intent)
         }
+        binding.btnTodoListApiApp.setOnClickListener {
+            val intent = Intent(this, TodoListApiApp::class.java)
+            startActivity(intent)
+        }
     }
+
     override fun onBackPressed() {
 //        super.onBackPressed()
         val exitAlertDialog = AlertDialog.Builder(this)

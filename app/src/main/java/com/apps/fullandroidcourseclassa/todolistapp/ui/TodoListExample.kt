@@ -25,9 +25,11 @@ class TodoListExample : Fragment() {
         var todoList = mutableListOf(
             Todo("Todo Example", false),
         )
+        //SETUP RECYCLERVIEW
         val adapter = TodoAdapter(todoList)
         binding.rvTodo.adapter = adapter
         binding.rvTodo.layoutManager = LinearLayoutManager(activity)
+
         binding.btnAddTodo.setOnClickListener {
             val newTodoTitle = binding.etTodo.text.toString()
             val newTodo = Todo(newTodoTitle, false)

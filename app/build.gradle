@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 apply plugin: "kotlin-kapt"
 apply plugin: 'com.google.gms.google-services'
@@ -58,6 +59,7 @@ dependencies {
     //Navigation UI
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 
     //TESTING
     testImplementation 'junit:junit:4.13.2'

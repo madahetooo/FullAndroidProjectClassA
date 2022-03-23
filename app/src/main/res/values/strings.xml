@@ -113,7 +113,13 @@
     <string name="clothes_app">Clothes App</string>
     <string name="push_notification_app">Push Notification App</string>
     <string name="todolist_api_app">Todolist Api App</string>
-
+    <string name="normal_map">Normal Map</string>
+    <string name="hybrid_map">Hybrid Map</string>
+    <string name="satellite_map">Satellite Map</string>
+    <string name="terrain_map">Terrain Map</string>
+    <string name="lat_long_snippet">Lat: %1$.5f, Long: %2$.5f</string>
+    <string name="dropped_pin">Dropped Pin</string>
+    <string name="poi">poi</string>
     <string-array name="months">
         <item>Jan</item>
         <item>Feb</item>
@@ -128,4 +134,5 @@
         <item>Nov</item>
         <item>Dec</item>
     </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

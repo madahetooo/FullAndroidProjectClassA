@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.apps.fullandroidcourseclassa">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:name=".breakingbadapp.BreakingBadApplication"
@@ -14,6 +16,26 @@
         android:roundIcon="@drawable/dsc"
         android:supportsRtl="true"
         android:theme="@style/Theme.FullAndroidCourseClassA">
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAV0Iblxbn4k4WzwmM49Se9Xovsu9B2j6o" />
+
+<!--        <activity-->
+<!--            android:name=".wandergooglemapsapp.MapsActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_maps" />-->
         <activity
             android:name=".todolistapi.ui.TodoListApiApp"
             android:exported="false" />
@@ -32,6 +54,7 @@
         </service>
 
         <activity android:name=".breakingbadapp.ui.BreakingBad" />
+        <activity android:name=".otherapps.ui.base.SplashScreen" />
         <activity android:name=".clothesapp.ui.ClothingApp" />
         <activity android:name=".pushnotificationapp.ui.CloudMessagingApp" />
         <activity android:name=".otherapps.ui.utils.CoroutineExamples" />
@@ -44,7 +67,7 @@
         <activity android:name=".otherapps.ui.loginsystem.RegistrationActivity" />
         <activity android:name=".otherapps.ui.loginsystem.LoginActivity" /> <!-- <activity android:name=".TodoListExample" /> -->
         <activity
-            android:name=".otherapps.ui.base.SplashScreen"
+            android:name=".wandergooglemapsapp.MapsActivity"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>
